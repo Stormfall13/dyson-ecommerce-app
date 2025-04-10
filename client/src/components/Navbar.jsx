@@ -2,6 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../store/slices/authSlice";
 
+import './header.css'
+
 const Navbar = () => {
     const user = useSelector((state) => state.auth.user);
     
@@ -14,7 +16,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav>
+        <nav className="navbar">
             {/* Если пользователь авторизован, показываем "Личный кабинет" */}
             {user && (
                 <>
@@ -29,10 +31,10 @@ const Navbar = () => {
 
             {/* Если пользователь не авторизован, показываем "Вход" и "Регистрация" */}
             {!user && (
-                <>
+                <div className="auth">
                     <Link to="/login">Вход</Link>
                     <Link to="/register">Регистрация</Link>
-                </>
+                </div>
             )}
         </nav>
     );
