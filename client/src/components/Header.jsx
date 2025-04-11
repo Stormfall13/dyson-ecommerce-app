@@ -10,7 +10,7 @@ import bucketPink from '../assets/bucket-pink.svg';
 
 const Header = () => {
 
-    const [ countBucket, setIsCountBucket ] = useState(100);
+    const [ countBucket, setIsCountBucket ] = useState(1);
 
     return (
         <div className='header'>
@@ -19,22 +19,26 @@ const Header = () => {
                 <button className='category__menu-btn'>
                     <img src={burger} alt="burger" />
                 </button>
-                <a href="/" className='logo'>
+                <Link   onClick={() => {window.location.href = '/'; }} className='logo'>
                     <img src={logo} alt="" />
-                </a>
+                </Link>
                 <nav className='top__menu'>
-                    <Link to="#">О нас</Link>
-                    <Link to="#">Доставка и оплата</Link>
-                    <Link to="#">Регистрация продукта</Link>
-                    <Link to="#">Сервис</Link>
-                    <Link to="#">Сертификаты и лицензии</Link>
+                    <Link to="/our">О нас</Link>
+                    <Link to="/delivery-payment">Доставка и оплата</Link>
+                    <Link to="/register-prod">Регистрация продукта</Link>
+                    <Link to="/service">Сервис</Link>
+                    <Link to="/certificate">Сертификаты и лицензии</Link>
                 </nav>
                 <Link 
                     className='bucket__btn'
                     
                     >
                     <div className="count__bucket">{countBucket}</div>
-                    {countBucket > 0 ? ( <img src={bucketPink} alt="bucket__btn" /> ) 
+                    {countBucket > 0 ? ( 
+                        <Link to="/bucket">
+                            <img src={bucketPink} alt="bucket__btn" /> 
+                        </Link>
+                    ) 
                     : 
                     ( <img src={bucket} alt="bucket__btn" /> )
 
