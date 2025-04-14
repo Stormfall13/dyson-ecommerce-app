@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import Navbar from './Navbar';
+import HorizontalMenu from './HorizontalMenu';
+
 import './header.css'
 
 import burger from '../assets/burger.svg';
@@ -13,7 +16,7 @@ const Header = () => {
     const [ countBucket, setIsCountBucket ] = useState(1);
 
     return (
-        <div className='header'>
+        <header className='header'>
             <div className="header__wrapp">
                 <Navbar/>
                 <button className='category__menu-btn'>
@@ -22,14 +25,8 @@ const Header = () => {
                 <Link   onClick={() => {window.location.href = '/'; }} className='logo'>
                     <img src={logo} alt="" />
                 </Link>
-                <nav className='top__menu'>
-                    <Link to="/our">О нас</Link>
-                    <Link to="/delivery-payment">Доставка и оплата</Link>
-                    <Link to="/register-prod">Регистрация продукта</Link>
-                    <Link to="/service">Сервис</Link>
-                    <Link to="/certificate">Сертификаты и лицензии</Link>
-                </nav>
-                <Link 
+                <HorizontalMenu />
+                <div 
                     className='bucket__btn'
                     
                     >
@@ -44,9 +41,9 @@ const Header = () => {
 
                     }
                     
-                </Link> 
+                </div> 
             </div>
-        </div>
+        </header>
     )
 }
 
