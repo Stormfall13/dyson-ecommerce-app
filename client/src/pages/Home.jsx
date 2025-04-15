@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import SectionBanner from "../components/SectionBanner";
+import SectionCategory from "../components/SectionCategory";
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
         <div>
             <Header />
             <SectionBanner />
+            <SectionCategory />
         </div>
     );
 };

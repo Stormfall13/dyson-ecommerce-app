@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+import Header from "../components/Header";
+
 const Register = () => {
     const [form, setForm] = useState({ username: "", email: "", password: "" });
     const navigate = useNavigate();
@@ -23,6 +25,7 @@ const Register = () => {
 
     return (
         <div className="auth-container">
+            <Header />
             <h2>Регистрация</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="username" placeholder="Имя" value={form.username} onChange={handleChange} required />

@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { loginSuccess } from "../store/slices/authSlice";
 
+import Header from "../components/Header";
+
 
 const Login = () => {
     const [form, setForm] = useState({ email: "", password: "" });
@@ -29,6 +31,7 @@ const Login = () => {
 
     return (
         <div className="auth-container">
+            <Header />
             <h2>Вход</h2>
             <form onSubmit={handleSubmit}>
                 <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required />

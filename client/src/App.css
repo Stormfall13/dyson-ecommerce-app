@@ -26,6 +26,7 @@ p {
 }
 
 :root {
+    --text-black-color: #111111;
     --first-color: #C5358C;
     --thin: 100;
     --extra-light: 200;
