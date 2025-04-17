@@ -13,6 +13,9 @@
     .category__wrapper{
         cursor: pointer;
         max-width: 325px;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        overflow: hidden;
         .category__img{
             max-width: 325px;
             max-height: 325px;
@@ -25,6 +28,7 @@
         }
         .category__text{
             transition: 0.6s;
+            padding: 27px 50px;
             .category__name{
                 font-weight: var(--regular);
                 font-size: 30px;

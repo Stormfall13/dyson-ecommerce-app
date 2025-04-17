@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './sectionCategory.css';
 
@@ -19,25 +20,25 @@ const SectionCategory = () => {
         id: 1,
         imageCategory: c1,
         categoryName: 'Акции',
-        linkUrl: '#',
+        linkUrl: '/product',
       },
       {
         id: 2,
         imageCategory: c2,
         categoryName: 'Фены',
-        linkUrl: '#',
+        linkUrl: '/product',
       },
       {
         id: 3,
         imageCategory: c3,
         categoryName: 'Стайлеры',
-        linkUrl: '#',
+        linkUrl: '/product',
       },
       {
         id: 4,
         imageCategory: c4,
         categoryName: 'Выпрямители',
-        linkUrl: '#',
+        linkUrl: '/product',
       },
     ];
 
@@ -57,10 +58,10 @@ const SectionCategory = () => {
                         </div>
                         <div className={`category__text ${isHovered ? 'hovered' : ''}`}>
                             <p className="category__name">{category.categoryName}</p>
-                            <a href={category.linkUrl} className='link__category'>
+                            <Link to={category.linkUrl} className='link__category'>
                                 Подробнее 
                                 <img src={isHovered ? arrowLinkWhite : arrowLink} alt="" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 )

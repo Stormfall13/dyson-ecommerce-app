@@ -1,6 +1,8 @@
 import Header from "../components/Header";
 import SectionBanner from "../components/SectionBanner";
 import SectionCategory from "../components/SectionCategory";
+import SectionChoise from "../components/SectionChoise";
+import SectionContent from "../components/SectionContent";
 
 
 const Home = () => {
@@ -10,6 +12,8 @@ const Home = () => {
             <Header />
             <SectionBanner />
             <SectionCategory />
+            <SectionContent />
+            <SectionChoise />
         </div>
     );
 };
