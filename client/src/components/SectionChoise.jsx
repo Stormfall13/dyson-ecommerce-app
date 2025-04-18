@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './sectionChoise.css';
 
 import x1 from '../assets/x1.svg';
 import x2 from '../assets/x2.svg';
@@ -62,8 +61,8 @@ const SectionChoise = () => {
                                     <img src={choise.choiseImg} alt="" />
                                 </div>
                                 <div className="choise__wrapp-text">
-                                    <h3 className="choise__title">{choise.choiseWrappTitle}</h3>
-                                    <p className="choise__text">{choise.choiseDescription}</p>
+                                    <h3>{choise.choiseWrappTitle}</h3>
+                                    <p>{choise.choiseDescription}</p>
                                 </div>
                             </div>
                         )

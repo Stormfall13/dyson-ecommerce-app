@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './sectionContent.css';
 
 import bg2 from '../assets/bg2.png';
 

@@ -5,6 +5,7 @@ import SectionChoise from "../components/SectionChoise";
 import SectionContent from "../components/SectionContent";
 
 
+
 const Home = () => {
 
     return (

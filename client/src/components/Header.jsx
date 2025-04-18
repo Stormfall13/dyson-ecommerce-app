@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
 import HorizontalMenu from './HorizontalMenu';
 
-import './header.css'
 
 import burger from '../assets/burger.svg';
 import logo from '../assets/logo.svg';

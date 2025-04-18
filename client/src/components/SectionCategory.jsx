@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import './sectionCategory.css';
 
 import c1 from '../assets/c1.png';
 import c2 from '../assets/c2.png';
