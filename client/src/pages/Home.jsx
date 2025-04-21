@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import SectionBanner from "../components/SectionBanner";
+import SectionBlockGoods from "../components/SectionBlockGoods";
 import SectionCategory from "../components/SectionCategory";
 import SectionChoise from "../components/SectionChoise";
 import SectionContent from "../components/SectionContent";
@@ -15,6 +16,7 @@ const Home = () => {
             <SectionCategory />
             <SectionContent />
             <SectionChoise />
+            <SectionBlockGoods />
         </div>
     );
 };

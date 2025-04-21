@@ -311,4 +311,8 @@ p {
   .section__choise-wrapp .choise__wrapp .choise__wrapper:hover {
     box-shadow: none;
   }
+}
+
+.section__goods {
+  background: #F8F8F8;
 }/*# sourceMappingURL=App.css.map */
