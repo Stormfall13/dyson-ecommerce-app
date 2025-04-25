@@ -4,33 +4,42 @@ import d1 from '../assets/d1.png';
 import d2 from '../assets/d2.png';
 import d3 from '../assets/d3.png';
 
+import plus from '../assets/plus.svg';
+import minus from '../assets/minus.svg';
+
 
 const SectionBlockGoods = () => {
 
   const [expanded, setExpanded] = useState(false);
-  const [amount, setAmount] = useState(1);
+  const [amounts, setAmounts] = useState(1);
 
-  const handleChange = (e) => {
+  const handleChange = (id, e) => {
     const value = parseInt(e.target.value, 10);
-    if (isNaN(value) || value < 1) {
-      setAmount(1);
-    } else {
-      setAmount(value);
-    }
+    setAmounts(prev => ({
+      ...prev,
+      [id]: isNaN(value) || value < 1 ? 1 : value
+    }));
+  };
+  
+  const handleBlur = (id) => {
+    setAmounts(prev => ({
+      ...prev,
+      [id]: !prev[id] || prev[id] < 1 ? 1 : prev[id]
+    }));
   };
 
-  const handleBlur = () => {
-    if (!amount || amount < 1) {
-      setAmount(1);
-    }
+  const increment = (id) => {
+    setAmounts(prev => ({
+      ...prev,
+      [id]: (prev[id] || 1) + 1
+    }));
   };
 
-  const increment = () => {
-    setAmount((prev) => prev + 1);
-  };
-
-  const decrement = () => {
-    setAmount((prev) => (prev > 1 ? prev - 1 : 1));
+  const decrement = (id) => {
+    setAmounts(prev => ({
+      ...prev,
+      [id]: Math.max((prev[id] || 1) - 1, 1)
+    }));
   };
 
   const goodsData = [
@@ -144,7 +153,7 @@ const SectionBlockGoods = () => {
                           <div className="goods__image">
                             <img src={goods.goodsImage} alt="image" />
                           </div>
-                          <p className="goods__name">{goods.goodsName}</p>
+                          <a href="#" className="goods__name">{goods.goodsName}</a>
                           <div className="stock__flags">
                             {goods.inStock ? ( 
                               <div className='stock'>В наличии</div> 
@@ -158,19 +167,23 @@ const SectionBlockGoods = () => {
                           </div>
                           <div className="goods__price-wrapp">
                             <div className="goods__main-price">{goods.mainPrice} Р</div>
-                            <div className="goods__old-orice">{goods.oldPrice} Р</div>
+                            <div className="goods__old-price">{goods.oldPrice} Р</div>
                           </div>
                           <div className="goods__btn-wrapp">
                           <div className="goods__amount">
-                            <button onClick={decrement}>−</button>
+                            <button onClick={() => decrement(goods.id)}>
+                              <img src={minus} alt="" />
+                            </button>
                             <input
                               type="text"
-                              value={amount}
-                              onChange={handleChange}
-                              onBlur={handleBlur}
+                              value={amounts[goods.id] || 1}
+                              onChange={(e) => handleChange(goods.id, e)}
+                              onBlur={() => handleBlur(goods.id)}
                               min={1}
                             />
-                            <button onClick={increment}>+</button>
+                            <button onClick={() => increment(goods.id)}>
+                                <img src={plus} alt="" />
+                            </button>
                           </div>
                             <button className='inBucket'>В корзину</button>
                           </div>
