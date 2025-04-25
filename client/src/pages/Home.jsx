@@ -4,6 +4,7 @@ import SectionBlockGoods from "../components/SectionBlockGoods";
 import SectionCategory from "../components/SectionCategory";
 import SectionChoise from "../components/SectionChoise";
 import SectionContent from "../components/SectionContent";
+import SectionReviews from "../components/SectionReviews";
 
 
 
@@ -17,6 +18,7 @@ const Home = () => {
             <SectionContent />
             <SectionChoise />
             <SectionBlockGoods />
+            <SectionReviews />
         </div>
     );
 };

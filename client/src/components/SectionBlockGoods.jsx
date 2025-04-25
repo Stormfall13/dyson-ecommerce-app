@@ -1,125 +1,58 @@
 import React, { useState } from 'react';
-
-import d1 from '../assets/d1.png';
-import d2 from '../assets/d2.png';
-import d3 from '../assets/d3.png';
+import { useSelector, useDispatch } from 'react-redux';
+import { setAmount, increment, decrement } from '../store/slices/amountsSlice';
 
 import plus from '../assets/plus.svg';
 import minus from '../assets/minus.svg';
+import arrowLeft from '../assets/arrow-left.svg';
+import arrowRight from '../assets/arrow-right.svg'
+
+import goodsData from './goodsData';
+import categoryArray from './categoryArray';
 
 
 const SectionBlockGoods = () => {
 
   const [expanded, setExpanded] = useState(false);
-  const [amounts, setAmounts] = useState(1);
+  const [sectionGoodsHidden, setSectionGoodsHidden] = useState(true);
+
+  const itemsPerPage = 6;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Вычисляем общее количество страниц
+  const totalPages = Math.ceil(goodsData.length / itemsPerPage);
+
+  // Получаем товары для текущей страницы
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentGoods = goodsData.slice(startIndex, startIndex + itemsPerPage);
+
+
+  const dispatch = useDispatch();
+  const amounts = useSelector((state) => state.amounts);
 
   const handleChange = (id, e) => {
     const value = parseInt(e.target.value, 10);
-    setAmounts(prev => ({
-      ...prev,
-      [id]: isNaN(value) || value < 1 ? 1 : value
-    }));
+    dispatch(setAmount({ id, value: isNaN(value) ? 1 : value }));
   };
   
   const handleBlur = (id) => {
-    setAmounts(prev => ({
-      ...prev,
-      [id]: !prev[id] || prev[id] < 1 ? 1 : prev[id]
-    }));
+    const value = amounts[id];
+    dispatch(setAmount({ id, value: value < 1 ? 1 : value }));
   };
+  
+  const handleIncrement = (id) => dispatch(increment(id));
+  const handleDecrement = (id) => dispatch(decrement(id));
 
-  const increment = (id) => {
-    setAmounts(prev => ({
-      ...prev,
-      [id]: (prev[id] || 1) + 1
-    }));
-  };
-
-  const decrement = (id) => {
-    setAmounts(prev => ({
-      ...prev,
-      [id]: Math.max((prev[id] || 1) - 1, 1)
-    }));
-  };
-
-  const goodsData = [
-    {
-      id: 1,
-      goodsImage: d1,
-      goodsName: 'Фен Dyson Supersonic HD07 синий медный с 5 насадками в чехле и расческамия',
-      inStock: true,
-      flags: [
-        { id: 1, value: '-15%', active: false },
-        { id: 2, value: '-20%', active: true },
-        { id: 3, value: '-50%', active: false },
-      ],
-      mainPrice: '59 990',
-      oldPrice: '69 990',
-    },
-    {
-      id: 2,
-      goodsImage: d2,
-      goodsName: 'Фен Dyson Supersonic HD07 с 5 насадками и подставкой',
-      inStock: false,
-      flags: [
-        { id: 1, value: '-15%', active: false },
-        { id: 2, value: '-20%', active: false },
-        { id: 3, value: '-50%', active: true },
-      ],
-      mainPrice: '47 990',
-      oldPrice: '51 990',
-    },
-    {
-      id: 3,
-      goodsImage: d3,
-      goodsName: 'Фен Dyson Supersonic 4 насадки HD03 с чехлом для хранения цвет сирень',
-      inStock: true,
-      flags: [
-        { id: 1, value: '-15%', active: true },
-        { id: 2, value: '-20%', active: false },
-        { id: 3, value: '-50%', active: false },
-      ],
-      mainPrice: '46 990',
-      oldPrice: '51 990',
-    },
-  ]
-
-  const categoryArray = [
-    {
-      id: 1,
-      categoryName: 'dyson стайлер для длинных волос',
-      categoryLink: '#',
-    },
-    {
-      id: 2,
-      categoryName: 'dyson стайлер красный',
-      categoryLink: '#',
-    },
-    {
-      id: 3,
-      categoryName: 'dyson hs01 airwrap complete',
-      categoryLink: '#',
-    },
-    {
-      id: 4,
-      categoryName: 'фен щетка дайсон',
-      categoryLink: '#',
-    },
-    {
-      id: 5,
-      categoryName: 'dyson Фен Supersonic hd07',
-      categoryLink: '#',
-    }
-  ]
-
-    // Показываем первые 4 или все в зависимости от expanded
-    const visibleCategories = expanded
-    ? categoryArray
-    : categoryArray.slice(0, 4);
+  // Показываем первые 4 или все в зависимости от expanded
+  const visibleCategories = expanded
+  ? categoryArray
+  : categoryArray.slice(0, 4);
 
 
   return (
-    <section className='section__goods'>
+    <section className="section__goods" style={{
+      display: sectionGoodsHidden ? 'block' : 'none'
+    }}>
       <div className="goods__wrapp">
           <div className="goods__wrapper-top">
             <div className="top__wrapper">
@@ -147,7 +80,7 @@ const SectionBlockGoods = () => {
             </div>
           </div>
           <div className="goods__wrapper-content">
-              {goodsData.map((goods) => {
+              {currentGoods.map((goods) => {
                   return (
                       <div className="goods__wrapper-item" key={goods.id}>
                           <div className="goods__image">
@@ -171,7 +104,7 @@ const SectionBlockGoods = () => {
                           </div>
                           <div className="goods__btn-wrapp">
                           <div className="goods__amount">
-                            <button onClick={() => decrement(goods.id)}>
+                            <button onClick={() => handleDecrement(goods.id)}>
                               <img src={minus} alt="" />
                             </button>
                             <input
@@ -181,7 +114,7 @@ const SectionBlockGoods = () => {
                               onBlur={() => handleBlur(goods.id)}
                               min={1}
                             />
-                            <button onClick={() => increment(goods.id)}>
+                            <button onClick={() => handleIncrement(goods.id)}>
                                 <img src={plus} alt="" />
                             </button>
                           </div>
@@ -190,6 +123,26 @@ const SectionBlockGoods = () => {
                       </div>
                   )
               })}
+          </div>
+          <div className="pagination">
+              <div className="pagination__wrapp-button">
+                <button 
+                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                  disabled={currentPage === 1}
+                >
+                  <img src={arrowLeft} alt="" />
+                </button>
+
+                <button 
+                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                  disabled={currentPage === totalPages}
+                >
+                  <img src={arrowRight} alt="" />
+                </button> 
+              </div>
+              <span style={{ margin: '0 10px' }}>
+                {currentPage} из {totalPages}
+              </span>
           </div>
       </div>
     </section>

@@ -369,6 +369,22 @@ p {
   outline: none;
   border-radius: 3px;
 }
+.section__goods .goods__wrapp .pagination {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 100px 0;
+}
+.section__goods .goods__wrapp .pagination button {
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+.section__goods .goods__wrapp .pagination span {
+  font-size: 24px;
+  font-weight: var(--regular);
+  color: var(--text-black-color);
+}
 .section__goods .goods__wrapper-content {
   display: flex;
   flex-wrap: wrap;
@@ -486,7 +502,7 @@ p {
   max-width: 218px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border-radius: 3px;
 }
 .section__goods .goods__wrapper-content .goods__wrapper-item .goods__btn-wrapp .goods__amount button {
