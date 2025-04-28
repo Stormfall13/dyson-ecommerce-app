@@ -540,3 +540,31 @@ p {
 }
 
 
+.reviews{
+    max-width: 1360px;
+    margin: 0 auto;
+    &__head{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        h2{
+            color: var(--text-black-color);
+            font-weight: var(--medium);
+            font-size: 46px;
+            margin: 50px 0 10px 0;
+            display: inline-block;
+            span{
+                color: var(--first-color); 
+            }
+        }
+        .reviews__btn{
+            background: transparent;
+            border: 1px solid #111111;
+            font-size: 24px;
+            font-weight: var(--regular);
+            color: #111111;
+            padding: 17px 46px;
+            cursor: pointer;
+        }
+    }
+}

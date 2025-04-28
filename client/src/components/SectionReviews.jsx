@@ -53,11 +53,30 @@ const SectionReviews = () => {
         <section className='reviews'>
             <div className="reviews__head">
                 <h2>Отзывы <span>{dataReviews.length}</span></h2>
-                <div className="head__wrapp">
-                    <div className="head__rating">
-                        
-                    </div>
-                </div>
+                <button className='reviews__btn'>Написать отзыв</button>
+            </div>
+            <div className="reviews__wrapp">
+                {dataReviews.map((reviews) => {
+                    return (
+                        <div className="reviews__wrapper" key={reviews.id}>
+                            <div className="rewiews__sidebar">
+                                <p className="reviews__author">{reviews.nameAuthor}</p>
+                                <div className="reviews__rating">{reviews.rating}</div>
+                            </div>
+                            <div className="reviews__content-wrapp">
+                                <p className="title__reviews">{reviews.titleReviews}</p>
+                                <p className="text__reviews">{reviews.textReviews}</p>
+                                {reviews.imageReviews.map((images) => {
+                                    return (
+                                        <div className="reviews__img" key={images.id}>
+                                            <img src={images.linkImage} alt="reviews image" />
+                                        </div> 
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    )
+                })}
             </div>
         </section>
     )
