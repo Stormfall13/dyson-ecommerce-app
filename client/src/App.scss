@@ -44,6 +44,7 @@ p {
     --black: 900;
 }
 
+// ######### HEADER ########## //
 
 .header{
     background: #111;
@@ -132,6 +133,7 @@ p {
     }
 }
 
+// ########### BANNER ########## //
 
 .banner{
     img{
@@ -141,6 +143,7 @@ p {
     }
 }
 
+// ########## SECTION CATEGORY ######## //
 
 .section__category{
     display: flex;
@@ -208,6 +211,8 @@ p {
 }
 
 
+// ########### SECTION CONTENT ######### //
+
 .section__content{
     background: #F8F8F8;
     display: flex;
@@ -247,6 +252,7 @@ p {
     }
 }
 
+// ######## SECTION CHOISE ######## //
 
 .section__choise{
     display: flex;
@@ -315,6 +321,7 @@ p {
     }
 }
 
+// ######### SECTION GOODS ######### //
 
 .section__goods{
     background: #F8F8F8;
@@ -539,14 +546,17 @@ p {
     }
 }
 
+// ######### SECTION REVIEWS ########## //
 
 .reviews{
     max-width: 1360px;
     margin: 0 auto;
+    padding: 0 8px 50px 8px;
     &__head{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        margin: 0 0 40px 0;
         h2{
             color: var(--text-black-color);
             font-weight: var(--medium);
@@ -566,5 +576,123 @@ p {
             padding: 17px 46px;
             cursor: pointer;
         }
+    }
+    &__author{
+        font-size: 20px;
+        font-weight: var(--medium);
+        color: #111111;
+        margin: 0 0 15px 0;
+    }
+    &__wrapper{
+        display: flex;
+        border-top: 1px solid #ABABAB;
+        padding: 40px 0;
+        
+    }
+    &__sidebar{
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        width: 100%;
+    }
+    &__content-wrapp{
+        .title__reviews{
+            font-size: 20px;
+            font-weight: var(--semi-bold);
+            color: #111111;
+            max-width: 790px;
+            width: 100%;
+            margin: 0 0 10px 0;
+        }
+        .text__reviews{
+            font-size: 18px;
+            font-weight: var(--light);
+            color: #111111;
+            max-width: 790px;
+            width: 100%;
+            margin: 0 0 30px 0;
+        }
+        .reviews__img-wrapp{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    }
+    .date{
+        font-size: 18px;
+        font-weight: var(--light);
+        color: #909090;
+    }
+    &__link-now{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        font-size: 24px;
+        font-weight: var(--regular);
+        color: #111111;
+        border: 1px solid #111111;
+        max-width: 311px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 14px 0;
+        transition: 0.6s;
+        span{
+            width: 34px;
+            height: 34px;
+        }
+    }
+    &__link-now:hover{
+        span{
+            transform: rotate(46deg);
+        }
+    }
+}
+
+// ########## SECTION FAQ ######### //
+
+.faq{
+    background: #F8F8F8;
+    padding: 50px 8px;
+    .title__faq{
+        color: var(--text-black-color);
+        font-weight: var(--medium);
+        font-size: 46px;
+        max-width: 1360px;
+        width: 100%;
+        margin: 50px auto;
+    }
+    &__wrapper{
+        max-width: 1360px;
+        margin: 0 auto;
+    }
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        padding: 38px 0;
+    }
+    &__item{
+        border-top: 1px solid #ABABAB;
+    }
+    &__content{
+        p{
+            font-size: 18px;
+            font-weight: var(--light);
+            color: #111111; 
+            margin: 10px 0;
+        } 
+    }
+}
+
+// ########### SECTION NEWS ########### //
+
+.news{
+    .title__news{
+        color: var(--text-black-color);
+        font-weight: var(--medium);
+        font-size: 46px;
+        max-width: 1360px;
+        width: 100%;
+        margin: 50px auto; 
     }
 }

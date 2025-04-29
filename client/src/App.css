@@ -538,11 +538,13 @@ p {
 .reviews {
   max-width: 1360px;
   margin: 0 auto;
+  padding: 0 8px 50px 8px;
 }
 .reviews__head {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 0 0 40px 0;
 }
 .reviews__head h2 {
   color: var(--text-black-color);
@@ -562,4 +564,109 @@ p {
   color: #111111;
   padding: 17px 46px;
   cursor: pointer;
+}
+.reviews__author {
+  font-size: 20px;
+  font-weight: var(--medium);
+  color: #111111;
+  margin: 0 0 15px 0;
+}
+.reviews__wrapper {
+  display: flex;
+  border-top: 1px solid #ABABAB;
+  padding: 40px 0;
+}
+.reviews__sidebar {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  width: 100%;
+}
+.reviews__content-wrapp .title__reviews {
+  font-size: 20px;
+  font-weight: var(--semi-bold);
+  color: #111111;
+  max-width: 790px;
+  width: 100%;
+  margin: 0 0 10px 0;
+}
+.reviews__content-wrapp .text__reviews {
+  font-size: 18px;
+  font-weight: var(--light);
+  color: #111111;
+  max-width: 790px;
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+.reviews__content-wrapp .reviews__img-wrapp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.reviews .date {
+  font-size: 18px;
+  font-weight: var(--light);
+  color: #909090;
+}
+.reviews__link-now {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-size: 24px;
+  font-weight: var(--regular);
+  color: #111111;
+  border: 1px solid #111111;
+  max-width: 311px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 14px 0;
+  transition: 0.6s;
+}
+.reviews__link-now span {
+  width: 34px;
+  height: 34px;
+}
+.reviews__link-now:hover span {
+  transform: rotate(46deg);
+}
+
+.faq {
+  background: #F8F8F8;
+  padding: 50px 8px;
+}
+.faq .title__faq {
+  color: var(--text-black-color);
+  font-weight: var(--medium);
+  font-size: 46px;
+  max-width: 1360px;
+  width: 100%;
+  margin: 50px auto;
+}
+.faq__wrapper {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.faq__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 38px 0;
+}
+.faq__item {
+  border-top: 1px solid #ABABAB;
+}
+.faq__content p {
+  font-size: 18px;
+  font-weight: var(--light);
+  color: #111111;
+  margin: 10px 0;
+}
+
+.news .title__news {
+  color: var(--text-black-color);
+  font-weight: var(--medium);
+  font-size: 46px;
+  max-width: 1360px;
+  width: 100%;
+  margin: 50px auto;
 }/*# sourceMappingURL=App.css.map */
