@@ -662,6 +662,9 @@ p {
   margin: 10px 0;
 }
 
+.news {
+  padding: 30px 8px;
+}
 .news .title__news {
   color: var(--text-black-color);
   font-weight: var(--medium);
@@ -669,4 +672,199 @@ p {
   max-width: 1360px;
   width: 100%;
   margin: 50px auto;
+}
+.news__wrapper {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.news__item {
+  max-width: 440px;
+}
+.news__content .news__date {
+  font-weight: var(--light);
+  color: #909090;
+  font-size: 18px;
+  margin: 30px 0 20px 0;
+}
+.news__content .news__title {
+  font-size: 20px;
+  font-weight: var(--semi-bold);
+  color: var(--text-black-color);
+  max-width: 355px;
+}
+.news__content .news__content {
+  font-size: 18px;
+  font-weight: var(--light);
+  color: var(--text-black-color);
+  margin: 15px 0 20px 0;
+}
+.news__content a {
+  color: var(--first-color);
+  text-decoration: underline;
+}
+.news__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-size: 24px;
+  font-weight: var(--regular);
+  color: #111111;
+  border: 1px solid #111111;
+  max-width: 311px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 14px 0;
+  transition: 0.6s;
+}
+.news__link span {
+  width: 34px;
+  height: 34px;
+}
+.news__link:hover span {
+  transform: rotate(46deg);
+}
+
+.forms {
+  background: #F8F8F8;
+  padding: 114px 8px;
+}
+.forms__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.forms__wrapper form {
+  max-width: 555px;
+  width: 100%;
+}
+.forms__wrapper form .form__title {
+  font-size: 42px;
+  font-weight: var(--medium);
+  color: var(--text-black-color);
+  margin: 50px 0;
+}
+.forms__wrapper form .form__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+}
+.forms__wrapper form .form__body .main__input {
+  border: 0;
+  border-bottom: 1px solid #111111;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 18px;
+  font-weight: var(--regular);
+  color: #111111;
+  padding: 12px 0;
+}
+.forms__wrapper form .form__body .main__input::-moz-placeholder {
+  color: #ABABAB;
+  font-size: 18px;
+  font-weight: var(--regular);
+}
+.forms__wrapper form .form__body .main__input::placeholder {
+  color: #ABABAB;
+  font-size: 18px;
+  font-weight: var(--regular);
+}
+.forms__wrapper form .form__body .policy__check {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.forms__wrapper form .form__body .policy__check .check__policy {
+  width: 30px;
+  height: 30px;
+}
+.forms__wrapper form .form__body .policy__check .text__policy {
+  font-size: 16px;
+  font-weight: var(--regular);
+  color: #111111;
+}
+.forms__wrapper form button {
+  background: var(--text-black-color);
+  color: #fff;
+  border-radius: 3px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin: 40px 0 0 0;
+  font-size: 24px;
+  font-weight: var(--regular);
+  padding: 16px 42px;
+}
+
+.footer {
+  background: var(--text-black-color);
+  padding: 82px 8px;
+}
+.footer__wrapp {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+}
+.footer__menu-wrapp {
+  max-width: 1360px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+.footer__menu-category {
+  max-width: 240px;
+  width: 100%;
+}
+.footer__menu-category .main__text-menu {
+  font-size: 24px;
+  font-weight: var(--semi-bold);
+  color: #fff;
+  margin: 15px 0;
+}
+.footer__menu-category ul {
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+}
+.footer__menu-category ul li a {
+  font-size: 18px;
+  font-weight: var(--light);
+  color: #fff;
+}
+.footer__menu-second {
+  display: flex;
+  width: 100%;
+}
+.footer__menu-second .main__wrapp-second {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  justify-content: space-between;
+}
+.footer__menu-second .main__wrapp-second .title__menu .link__title-menu {
+  color: #fff;
+  font-size: 24px;
+  font-weight: var(--semi-bold);
+  margin: 15px 0;
+  display: inline-block;
+}
+.footer__menu-second .main__wrapp-second .under__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.footer__menu-second .main__wrapp-second .under__menu li a {
+  font-size: 18px;
+  font-weight: var(--light);
+  color: #fff;
 }/*# sourceMappingURL=App.css.map */
