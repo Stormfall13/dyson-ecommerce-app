@@ -1,6 +1,5 @@
 const categoryMenuFooter = [
     {
-        nameCategoryMenu: 'Магазин',
         underMenu: [
             {
                 id: 1,
