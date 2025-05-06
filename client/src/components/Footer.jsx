@@ -38,22 +38,18 @@ const Footer = () => {
 					</div>
 					<div className="footer__menu-wrapp">
 							<nav className='footer__menu-category'>
-									<h3 className='main__text-menu'>Магазин</h3>
+								<h3 className='main__text-menu'>Магазин</h3>
+								<ul>
 									{categoryMenuFooter.map((categoryFooter) => {
 										return (
-											<ul key={categoryFooter.id}>
-												{categoryFooter.underMenu.map((underItems) => {
-														return (
-															<li key={underItems.id}>
-																<a href={underItems.linkParagParag}>
-																	{underItems.nameParagParag}
-																</a>
-															</li>
-														)
-												})}
-											</ul> 
+												<li key={categoryFooter.id}>
+													<a href={categoryFooter.linkParagParag}>
+														{categoryFooter.nameParagParag}
+													</a>
+												</li>
 										)
 									})}
+								</ul> 
 							</nav>
 							<nav className="footer__menu-second">
 								<ul className='main__wrapp-second'>

@@ -1,14 +1,21 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import dataHorMenu from './dataHorMenu';
 
 const HorizontalMenu = () => {
+
   return (
       <nav className='top__menu'>
-          <Link to="/our">О нас</Link>
-          <Link to="/delivery-payment">Доставка и оплата</Link>
-          <Link to="/register-prod">Регистрация продукта</Link>
-          <Link to="/service">Сервис</Link>
-          <Link to="/certificate">Сертификаты и лицензии</Link>
+          <ul>
+            {dataHorMenu.map((horMenuItems) => {
+              return (
+                <li key={horMenuItems.id}>
+                  <Link to={horMenuItems.linkMenu}>{horMenuItems.nameMenu}</Link>
+                </li> 
+              )
+            })}
+          </ul>
       </nav>
   )
 }

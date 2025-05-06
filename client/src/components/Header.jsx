@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { openCategoryMenu } from '../store/slices/uiSlice';
+import { closeCategoryMenu } from '../store/slices/uiSlice';
 
 import Navbar from './Navbar';
 import HorizontalMenu from './HorizontalMenu';
+import BurgerCategoryMenu from './BurgerCategoryMenu';
 
 
 import burger from '../assets/burger.svg';
@@ -13,12 +17,19 @@ import bucketPink from '../assets/bucket-pink.svg';
 const Header = () => {
 
     const [ countBucket, setIsCountBucket ] = useState(1);
+    const categoryMenuOpened = useSelector((state) => state.ui.isCategoryMenuOpen);
+
+    const dispatch = useDispatch();
+
+    const handleOpenMenu = () => {
+      dispatch(openCategoryMenu());
+    };
 
     return (
         <header className='header'>
             <div className="header__wrapp">
                 <Navbar/>
-                <button className='category__menu-btn'>
+                <button className='category__menu-btn' onClick={handleOpenMenu}>
                     <img src={burger} alt="burger" />
                 </button>
                 <Link   onClick={() => {window.location.href = '/'; }} className='logo'>
@@ -42,6 +53,9 @@ const Header = () => {
                     
                 </div> 
             </div>
+            {categoryMenuOpened && (
+            <BurgerCategoryMenu onClose={() => dispatch(closeCategoryMenu())} />
+            )}
         </header>
     )
 }
