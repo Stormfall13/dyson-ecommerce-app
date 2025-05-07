@@ -155,6 +155,16 @@ p {
     }
 }
 
+@media (max-width: 489px) {
+    .header{
+        .bucket__btn{
+            .count__bucket{
+                left: 20px;
+            }
+        }
+    }
+}
+
 // ########### BANNER ########## //
 
 .banner{
@@ -255,6 +265,26 @@ p {
                 .link__category{
                     font-size: 18px;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 489px) {
+    .category__wrapp{
+        gap: 10px;
+        .category__wrapper{
+            .category__img{
+                display: none;
+            }
+            .category__text{
+                padding: 8px 19px;
+                .category__name{
+                    font-size: 18px;
+                }
+                .link__category{
+                    font-size: 16px;
+                } 
             }
         }
     }
@@ -425,6 +455,29 @@ p {
                     }
                     p{
                         font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 489px) {
+    .section__choise-wrapp{
+        .choise__wrapp{
+            gap: 10px;
+            .choise__wrapper{
+                max-width: 167px;
+                .choise__img{
+                    width: 60px;
+                    height: 60px;
+                }
+                .choise__wrapp-text{
+                    h3{
+                        font-size: 15px;
+                    }
+                    p{
+                        font-size: 14px;
                     }
                 }
             }
@@ -764,6 +817,49 @@ p {
     }
 }
 
+@media (max-width: 489px) {
+    .section__goods{
+        .goods__wrapper-content{
+            gap: 10px;
+            .goods__wrapper-item{
+                max-width: 170px;
+                .goods__name{
+                    font-size: 14px;
+                    padding: 0 15px;
+                }
+                .stock__flags{
+                    flex-direction: column;
+                    gap: 10px;
+                    .stock{
+                        font-size: 14px;
+                    }
+                    .flag{
+                        font-size: 16px;
+                        padding: 5px 10px;
+                    }
+                }
+                .goods__price-wrapp{
+                    flex-wrap: wrap;
+                    max-width: 160px;
+                    .goods__main-price{
+                        font-size: 20px;
+                    }
+                    .goods__old-price{
+                        font-size: 16px;
+                    }
+                }
+                .goods__btn-wrapp{
+                    flex-wrap: wrap;
+                    gap: 2px;
+                    .inBucket{
+                        height: 45px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 // ######### SECTION REVIEWS ########## //
 
 .reviews{
@@ -1071,6 +1167,13 @@ p {
     }
 }
 
+@media (max-width: 489px) {
+    .news{
+        &__item{
+            flex-direction: column;
+        }
+    }
+}
 
 // ########## SECTION FORMS ######### //
 

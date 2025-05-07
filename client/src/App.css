@@ -151,6 +151,11 @@ p {
     order: 4;
   }
 }
+@media (max-width: 489px) {
+  .header .bucket__btn .count__bucket {
+    left: 20px;
+  }
+}
 .banner img {
   width: 100%;
   height: 100%;
@@ -242,6 +247,23 @@ p {
   }
   .category__wrapp .category__wrapper .category__text .link__category {
     font-size: 18px;
+  }
+}
+@media (max-width: 489px) {
+  .category__wrapp {
+    gap: 10px;
+  }
+  .category__wrapp .category__wrapper .category__img {
+    display: none;
+  }
+  .category__wrapp .category__wrapper .category__text {
+    padding: 8px 19px;
+  }
+  .category__wrapp .category__wrapper .category__text .category__name {
+    font-size: 18px;
+  }
+  .category__wrapp .category__wrapper .category__text .link__category {
+    font-size: 16px;
   }
 }
 .section__content {
@@ -401,6 +423,24 @@ p {
   }
   .section__choise .choise__wrapp .choise__wrapper .choise__wrapp-text p {
     font-size: 16px;
+  }
+}
+@media (max-width: 489px) {
+  .section__choise-wrapp .choise__wrapp {
+    gap: 10px;
+  }
+  .section__choise-wrapp .choise__wrapp .choise__wrapper {
+    max-width: 167px;
+  }
+  .section__choise-wrapp .choise__wrapp .choise__wrapper .choise__img {
+    width: 60px;
+    height: 60px;
+  }
+  .section__choise-wrapp .choise__wrapp .choise__wrapper .choise__wrapp-text h3 {
+    font-size: 15px;
+  }
+  .section__choise-wrapp .choise__wrapp .choise__wrapper .choise__wrapp-text p {
+    font-size: 14px;
   }
 }
 .section__goods {
@@ -719,6 +759,46 @@ p {
     font-size: 16px;
   }
 }
+@media (max-width: 489px) {
+  .section__goods .goods__wrapper-content {
+    gap: 10px;
+  }
+  .section__goods .goods__wrapper-content .goods__wrapper-item {
+    max-width: 170px;
+  }
+  .section__goods .goods__wrapper-content .goods__wrapper-item .goods__name {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+  .section__goods .goods__wrapper-content .goods__wrapper-item .stock__flags {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .section__goods .goods__wrapper-content .goods__wrapper-item .stock__flags .stock {
+    font-size: 14px;
+  }
+  .section__goods .goods__wrapper-content .goods__wrapper-item .stock__flags .flag {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+  .section__goods .goods__wrapper-content .goods__wrapper-item .goods__price-wrapp {
+    flex-wrap: wrap;
+    max-width: 160px;
+  }
+  .section__goods .goods__wrapper-content .goods__wrapper-item .goods__price-wrapp .goods__main-price {
+    font-size: 20px;
+  }
+  .section__goods .goods__wrapper-content .goods__wrapper-item .goods__price-wrapp .goods__old-price {
+    font-size: 16px;
+  }
+  .section__goods .goods__wrapper-content .goods__wrapper-item .goods__btn-wrapp {
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+  .section__goods .goods__wrapper-content .goods__wrapper-item .goods__btn-wrapp .inBucket {
+    height: 45px;
+  }
+}
 .reviews {
   max-width: 1360px;
   margin: 0 auto;
@@ -995,6 +1075,11 @@ p {
     font-size: 18px;
     max-width: 265px;
     padding: 9px 0;
+  }
+}
+@media (max-width: 489px) {
+  .news__item {
+    flex-direction: column;
   }
 }
 .forms {
