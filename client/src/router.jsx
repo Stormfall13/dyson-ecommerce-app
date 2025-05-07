@@ -17,6 +17,7 @@ const ServicePage = lazy(() => import('./pages/ServicePage'));
 const CertificatePage = lazy(() => import('./pages/CertificatePage'));
 const BucketPage = lazy(() => import('./pages/BucketPage'));
 const ProductPage = lazy(() => import('./pages/ProductPage'));
+const ProductCard = lazy(() => import('./pages/ProductCard'));
 
 
 const AppRouter = () => {
@@ -34,7 +35,8 @@ const AppRouter = () => {
                     <Route path="/service" element={<ServicePage />} />
                     <Route path="/certificate" element={<CertificatePage />} />
                     <Route path="/bucket" element={<BucketPage/>} />
-                    <Route path="/product" element={<ProductPage/>} />
+                    <Route path="/products/:category" element={<ProductPage/>} />
+                    <Route path="/product/:id" element={<ProductCard/>} />
                     
                     {/* 🔐 Защищенные маршруты (только для user и admin) */}
                     {/* <Route path="/" element={ <ProtectedRoute allowedRoles={["user", "admin"]}> <Home /> </ProtectedRoute> } /> */}

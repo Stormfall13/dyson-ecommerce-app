@@ -9,6 +9,7 @@ import arrowRight from '../assets/arrow-right.svg'
 
 import goodsData from './goodsData';
 import categoryArray from './categoryArray';
+import { Link } from 'react-router-dom';
 
 
 const SectionBlockGoods = () => {
@@ -86,7 +87,7 @@ const SectionBlockGoods = () => {
                           <div className="goods__image">
                             <img src={goods.goodsImage} alt="image" />
                           </div>
-                          <a href="#" className="goods__name">{goods.goodsName}</a>
+                          <Link to={`/product/${goods.id}`} className="goods__name">{goods.goodsName}</Link>
                           <div className="stock__flags">
                             {goods.inStock ? ( 
                               <div className='stock'>В наличии</div> 

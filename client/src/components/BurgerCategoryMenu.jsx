@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { closeCategoryMenu } from '../store/slices/uiSlice';
 
 import categoryMenuFooter from './categoryMenuFooter';
@@ -41,9 +42,9 @@ const BurgerCategoryMenu = () => {
                         {categoryMenuFooter.map((categoryFooter) => {
                             return (
                                 <li key={categoryFooter.id}>
-                                    <a href={categoryFooter.linkParagParag}>
+                                    <Link to={`/products/${categoryFooter.slug}`}>
                                         {categoryFooter.nameParagParag}
-                                    </a>
+                                    </Link>
                                 </li>
                             )
                         })}
