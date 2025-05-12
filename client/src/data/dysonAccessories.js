@@ -1,6 +1,6 @@
 import d1 from '../assets/d1.png';
 
-export const dysonAccessories = [
+const dysonAccessories = [
     {
       id: 1,
       goodsImage: d1,
@@ -16,3 +16,4 @@ export const dysonAccessories = [
     }
   ];
   
+export default dysonAccessories;

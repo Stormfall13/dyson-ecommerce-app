@@ -6,13 +6,14 @@ import dysonCorrale from './dysonCorrale';
 import dysonLights from './dysonLights';
 import dysonSupersonic from './dysonSupersonic';
 
-const allGoods = [
-  ...dysonAccessories,
-  ...dysonAirwrap,
-  ...dysonCleaners,
-  ...dysonClimate,
-  ...dysonCorrale,
-  ...dysonLights,
-  ...dysonSupersonic,
-]
-export default allGoods;
+const categoryDataMap = {
+  'dyson-accessories': dysonAccessories,
+  'dyson-airwrap': dysonAirwrap,
+  'dyson-cleaners': dysonCleaners,
+  'dyson-climate': dysonClimate,
+  'dyson-corrale': dysonCorrale,
+  'dyson-lights': dysonLights,
+  'dyson-supersonic': dysonSupersonic,
+};
+
+export default categoryDataMap;

@@ -1,6 +1,6 @@
 import d2 from '../assets/d2.png';
 
-export const dysonClimate = [
+const dysonClimate = [
     {
       id: 7,
       goodsImage: d2,
@@ -16,3 +16,4 @@ export const dysonClimate = [
     }
   ];
   
+export default dysonClimate;

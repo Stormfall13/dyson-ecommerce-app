@@ -1,6 +1,6 @@
 import d3 from '../assets/d3.png';
 
-export const dysonCorrale = [
+const dysonCorrale = [
   {
     id: 5,
     goodsImage: d3,
@@ -15,3 +15,5 @@ export const dysonCorrale = [
     oldPrice: '44 990',
   }
 ];
+
+export default dysonCorrale;

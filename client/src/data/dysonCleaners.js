@@ -1,6 +1,6 @@
 import d1 from '../assets/d1.png';
 
-export const dysonVacuumCleaners = [
+const dysonVacuumCleaners = [
     {
       id: 6,
       goodsImage: d1,
@@ -15,4 +15,5 @@ export const dysonVacuumCleaners = [
       oldPrice: '89 990',
     }
   ];
-  
+
+export default dysonVacuumCleaners;

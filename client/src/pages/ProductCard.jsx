@@ -4,24 +4,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 
 import goodsData from '../components/goodsData';
-import allGoods from '../data/allGoods';
-// import dysonAccessories from '../data/dysonAccessories';
-// import dysonAirwrap from '../data/dysonAirwrap';
-// import dysonCleaners from '../data/dysonCleaners';
-// import dysonClimate from '../data/dysonClimate';
-// import dysonCorrale from '../data/dysonCorrale';
-// import dysonLights from '../data/dysonLights';
-// import dysonSupersonic from '../data/dysonSupersonic';
-
-// const allGoods = [
-//   ...dysonAccessories,
-//   ...dysonAirwrap,
-//   ...dysonCleaners,
-//   ...dysonClimate,
-//   ...dysonCorrale,
-//   ...dysonLights,
-//   ...dysonSupersonic,
-// ]
+import allGoods from '../data/categoryDataMap';
 
 
 const ProductCard = () => {

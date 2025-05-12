@@ -1,6 +1,6 @@
 import d3 from '../assets/d3.png';
 
-export const dysonLights = [
+const dysonLights = [
     {
       id: 8,
       goodsImage: d3,
@@ -16,3 +16,4 @@ export const dysonLights = [
     }
   ];
   
+export default dysonLights;

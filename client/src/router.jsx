@@ -35,7 +35,7 @@ const AppRouter = () => {
                     <Route path="/service" element={<ServicePage />} />
                     <Route path="/certificate" element={<CertificatePage />} />
                     <Route path="/bucket" element={<BucketPage/>} />
-                    <Route path="/products/:category" element={<ProductPage/>} />
+                    <Route path="/products/:slug" element={<ProductPage/>} />
                     <Route path="/product/:id" element={<ProductCard/>} />
                     
                     {/* 🔐 Защищенные маршруты (только для user и admin) */}

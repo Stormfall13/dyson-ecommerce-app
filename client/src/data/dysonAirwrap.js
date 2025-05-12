@@ -1,6 +1,6 @@
 import d2 from '../assets/d2.png';
 
-export const dysonAirwrap = [
+const dysonAirwrap = [
   {
     id: 3,
     goodsImage: d2,
@@ -28,3 +28,5 @@ export const dysonAirwrap = [
     oldPrice: '68 990',
   }
 ];
+
+export default dysonAirwrap

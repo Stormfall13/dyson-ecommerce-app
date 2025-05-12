@@ -1,6 +1,6 @@
 import d1 from '../assets/d1.png';
 
-export const dysonSupersonic = [
+const dysonSupersonic = [
   {
     id: 1,
     goodsImage: d1,
@@ -28,3 +28,5 @@ export const dysonSupersonic = [
     oldPrice: '55 990',
   }
 ];
+
+export default dysonSupersonic;
