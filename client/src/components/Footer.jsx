@@ -42,14 +42,15 @@ const Footer = () => {
 								<ul>
 									{categoryMenuFooter.map((categoryFooter) => {
 										return (
-												<li key={categoryFooter.id}>
-													<a href={categoryFooter.linkParagParag}>
-														{categoryFooter.nameParagParag}
-													</a>
-												</li>
+											<li key={categoryFooter.id}>
+												<Link 
+													to={`/products/${categoryFooter.slug}`}>
+													{categoryFooter.nameParagParag}
+												</Link>
+											</li>
 										)
 									})}
-								</ul> 
+								</ul>
 							</nav>
 							<nav className="footer__menu-second">
 								<ul className='main__wrapp-second'>

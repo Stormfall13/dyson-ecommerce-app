@@ -42,7 +42,9 @@ const BurgerCategoryMenu = () => {
                         {categoryMenuFooter.map((categoryFooter) => {
                             return (
                                 <li key={categoryFooter.id}>
-                                    <Link to={`/products/${categoryFooter.slug}`}>
+                                    <Link 
+                                        to={`/products/${categoryFooter.slug}`} 
+                                        onClick={handleClose}>
                                         {categoryFooter.nameParagParag}
                                     </Link>
                                 </li>

@@ -2,7 +2,9 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { setAmount, increment, decrement } from '../store/slices/amountsSlice';
 import { useSelector, useDispatch } from 'react-redux';
+
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 import categoryDataMap from '../data/categoryDataMap';
 
@@ -41,6 +43,7 @@ const ProductPage = () => {
   }
 
   return (
+    <>
     <div className='prod__wrapp'>
       <Header />
       <div className="goods__wrapp">
@@ -92,6 +95,8 @@ const ProductPage = () => {
         </div> 
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
