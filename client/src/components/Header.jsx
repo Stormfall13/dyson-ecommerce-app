@@ -16,7 +16,8 @@ import bucketPink from '../assets/bucket-pink.svg';
 
 const Header = () => {
 
-    const [ countBucket, setIsCountBucket ] = useState(1);
+    const cart = useSelector((state) => state.cart);
+    const countBucket = cart.reduce((total, item) => total + item.amount, 0);
     const categoryMenuOpened = useSelector((state) => state.ui.isCategoryMenuOpen);
 
     const dispatch = useDispatch();
@@ -38,19 +39,13 @@ const Header = () => {
                 <HorizontalMenu />
                 <div 
                     className='bucket__btn'
-                    
                     >
                     <div className="count__bucket">{countBucket}</div>
                     {countBucket > 0 ? ( 
                         <Link to="/bucket">
                             <img src={bucketPink} alt="bucket__btn" /> 
                         </Link>
-                    ) 
-                    : 
-                    ( <img src={bucket} alt="bucket__btn" /> )
-
-                    }
-                    
+                    ) : ( <img src={bucket} alt="bucket__btn" /> )}
                 </div> 
             </div>
             {categoryMenuOpened && (

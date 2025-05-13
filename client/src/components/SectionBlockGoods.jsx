@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setAmount, increment, decrement } from '../store/slices/amountsSlice';
+import { addToCart } from '../store/slices/cartSlice';
 
 import plus from '../assets/plus.svg';
 import minus from '../assets/minus.svg';
@@ -82,6 +83,10 @@ const SectionBlockGoods = () => {
           </div>
           <div className="goods__wrapper-content">
               {currentGoods.map((goods) => {
+               const handleAddToCart = () => {
+                  const amount = amounts[goods.id] || 1;
+                  dispatch(addToCart({ id: goods.id, amount, product: goods }));
+                }; 
                   return (
                       <div className="goods__wrapper-item" key={goods.id}>
                           <div className="goods__image">
@@ -119,7 +124,13 @@ const SectionBlockGoods = () => {
                                 <img src={plus} alt="" />
                             </button>
                           </div>
-                            <button className='inBucket'>В корзину</button>
+                            <button
+                              className={`inBucket ${!goods.inStock ? 'disabled' : ''}`}
+                              onClick={handleAddToCart}
+                              disabled={!goods.inStock}
+                            >
+                              В корзину
+                            </button> 
                           </div>
                       </div>
                   )

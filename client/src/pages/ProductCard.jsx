@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { setAmount, increment, decrement } from '../store/slices/amountsSlice';
+import { addToCart } from '../store/slices/cartSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Header from '../components/Header';
@@ -36,6 +37,12 @@ const ProductCard = () => {
   
   const handleIncrement = (id) => dispatch(increment(id));
   const handleDecrement = (id) => dispatch(decrement(id));
+
+
+  const handleAddToCart = () => {
+    const amount = amounts[product.id] || 1;
+    dispatch(addToCart({ id: product.id, amount, product }));
+  };
   
   
   if (!product) {
@@ -90,7 +97,13 @@ const ProductCard = () => {
                       <img src={plus} alt="" />
                   </button>
                 </div>
-                  <button className='inBucket'>В корзину</button>
+                <button
+                  className={`inBucket ${!product.inStock ? 'disabled' : ''}`}
+                  onClick={handleAddToCart}
+                  disabled={!product.inStock}
+                >
+                  В корзину
+                </button>
               </div>   
             </div>
         </div>

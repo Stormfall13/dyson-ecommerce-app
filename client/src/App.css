@@ -44,6 +44,14 @@ p {
   --black: 900;
 }
 
+.inBucket.disabled {
+  background-color: #ccc !important;
+  color: #666 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  border: 1px solid #999 !important;
+}
+
 .header {
   background: #111;
   padding: 4px 20px;
@@ -1393,6 +1401,7 @@ p {
   font-size: 46px;
   margin: 50px 0;
   display: inline-block;
+  text-transform: capitalize;
 }
 .prod__wrapp .prod__title span {
   color: var(--first-color);
@@ -1688,6 +1697,7 @@ p {
   font-weight: var(--medium);
   font-size: 46px;
   display: inline-block;
+  text-transform: capitalize;
 }
 .prod__card-wrapp .prod__img {
   max-width: 400px;
@@ -1812,5 +1822,34 @@ p {
   }
   .prod__card-wrapp .card__wrapp .inBucket {
     max-width: 170px;
+  }
+}
+.bucket {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 100px 8px;
+}
+.bucket .bucket__empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.bucket .bucket__items .bucket__title {
+  color: var(--text-black-color);
+  font-weight: var(--medium);
+  font-size: 46px;
+  margin: 10px 0;
+}
+
+@media (max-width: 489px) {
+  .bucket {
+    padding: 5px 8px;
+  }
+  .bucket .bucket__items .bucket__title {
+    font-size: 24px;
+    margin: 10px 0;
+    padding: 0 8px;
   }
 }/*# sourceMappingURL=App.css.map */
