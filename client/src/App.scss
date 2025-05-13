@@ -1933,3 +1933,30 @@ p {
         justify-content: space-between;
     }
 }
+
+@media (max-width: 489px) {
+    .prod__card-wrapp{
+        padding: 5px 8px;
+        .prod__card-title{
+            font-size: 24px;
+            margin: 20px 0 10px 0;
+            padding: 0 8px; 
+        }
+        .price__wrapp{
+            .main__price{
+                font-size: 24px;
+            }
+            .old__price{
+                font-size: 18px;
+            }
+        }
+        .goods__amount{
+            max-width: 168px;
+        }
+        .card__wrapp{
+            .inBucket{
+                max-width: 170px;
+            }
+        }
+    }
+}

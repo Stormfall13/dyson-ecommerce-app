@@ -1790,4 +1790,27 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+@media (max-width: 489px) {
+  .prod__card-wrapp {
+    padding: 5px 8px;
+  }
+  .prod__card-wrapp .prod__card-title {
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+    padding: 0 8px;
+  }
+  .prod__card-wrapp .price__wrapp .main__price {
+    font-size: 24px;
+  }
+  .prod__card-wrapp .price__wrapp .old__price {
+    font-size: 18px;
+  }
+  .prod__card-wrapp .goods__amount {
+    max-width: 168px;
+  }
+  .prod__card-wrapp .card__wrapp .inBucket {
+    max-width: 170px;
+  }
 }/*# sourceMappingURL=App.css.map */
