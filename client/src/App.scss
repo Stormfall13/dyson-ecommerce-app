@@ -1985,11 +1985,89 @@ p {
         height: 80vh;
     }
     .bucket__items{
-        .bucket__title{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        .bucket__item{
+            display: flex;
+            border-bottom: 1px solid var(--first-color);
+            border-radius: 3px;
+            padding: 30px;
+            .bucket__item-img{
+                width: 90px;
+                height: 90px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            .goods__name{
+                max-width: 400px;
+            }
+        }
+        .bucket__total{
+            margin-top: 20px;
             color: var(--text-black-color);
-            font-weight: var(--medium);
-            font-size: 46px; 
-            margin: 10px 0;
+            font-size: 30px;
+            border: 1px solid var(--first-color);
+            border-radius: 3px;
+            max-width: 400px;
+            width: 100%;
+            min-height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart__amount{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .delete__btn{
+            border: 0;
+            outline: none;
+            background: var(--text-black-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer; 
+            padding: 20px 28px; 
+            border-radius: 3px;
+        }
+    }
+    .bucket__title{
+        color: var(--text-black-color);
+        font-weight: var(--medium);
+        font-size: 46px; 
+        margin: 10px 0;
+    }
+    .goods__amount{
+        border: 1px solid var(--text-black-color);
+        padding: 16px 0;
+        max-width: 218px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        border-radius: 3px; 
+        button{
+            border: 0;
+            outline: none;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer; 
+        }
+        input{
+            border: 0;
+            outline: none;
+            font-size: 24px;
+            font-weight: var(--regular);
+            max-width: 60px;
+            text-align: center; 
         }
     }
 }
@@ -1997,12 +2075,10 @@ p {
 @media (max-width: 489px) {
     .bucket{
         padding: 5px 8px; 
-        .bucket__items{
-            .bucket__title{
-                font-size: 24px;
-                margin: 10px 0;
-                padding: 0 8px;
-            }
+        .bucket__title{
+            font-size: 24px;
+            margin: 10px 0;
+            padding: 0 8px;
         }
     }
 }

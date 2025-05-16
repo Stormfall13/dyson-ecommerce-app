@@ -1836,18 +1836,98 @@ p {
   align-items: center;
   height: 80vh;
 }
-.bucket .bucket__items .bucket__title {
+.bucket .bucket__items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.bucket .bucket__items .bucket__item {
+  display: flex;
+  border-bottom: 1px solid var(--first-color);
+  border-radius: 3px;
+  padding: 30px;
+}
+.bucket .bucket__items .bucket__item .bucket__item-img {
+  width: 90px;
+  height: 90px;
+}
+.bucket .bucket__items .bucket__item .bucket__item-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.bucket .bucket__items .bucket__item .goods__name {
+  max-width: 400px;
+}
+.bucket .bucket__items .bucket__total {
+  margin-top: 20px;
+  color: var(--text-black-color);
+  font-size: 30px;
+  border: 1px solid var(--first-color);
+  border-radius: 3px;
+  max-width: 400px;
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bucket .bucket__items .cart__amount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.bucket .bucket__items .delete__btn {
+  border: 0;
+  outline: none;
+  background: var(--text-black-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px 28px;
+  border-radius: 3px;
+}
+.bucket .bucket__title {
   color: var(--text-black-color);
   font-weight: var(--medium);
   font-size: 46px;
   margin: 10px 0;
+}
+.bucket .goods__amount {
+  border: 1px solid var(--text-black-color);
+  padding: 16px 0;
+  max-width: 218px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 3px;
+}
+.bucket .goods__amount button {
+  border: 0;
+  outline: none;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.bucket .goods__amount input {
+  border: 0;
+  outline: none;
+  font-size: 24px;
+  font-weight: var(--regular);
+  max-width: 60px;
+  text-align: center;
 }
 
 @media (max-width: 489px) {
   .bucket {
     padding: 5px 8px;
   }
-  .bucket .bucket__items .bucket__title {
+  .bucket .bucket__title {
     font-size: 24px;
     margin: 10px 0;
     padding: 0 8px;
