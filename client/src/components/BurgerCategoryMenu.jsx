@@ -31,7 +31,7 @@ const BurgerCategoryMenu = () => {
     if (isMobile === null) return null;
 
     return (
-        <div className='burger__category-menu'>
+        <div className='burger__category-menu' onClick={handleClose}>
             <div className="burger__category-wrapp">
                 <button className="close__btn" onClick={handleClose}>
                     <img src={close} alt="" />
