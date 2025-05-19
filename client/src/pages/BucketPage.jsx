@@ -49,6 +49,7 @@ const BucketPage = () => {
         ) : (
           <>
           <h1 className='bucket__title'>Корзина</h1>
+          <div className="bucket__main-wrapp">
           <div className="bucket__items">
             {cart.map(item => (
               <div key={item.id} className="bucket__item">
@@ -85,8 +86,11 @@ const BucketPage = () => {
                 </div>
               </div>
             ))}
-            <div className="bucket__total">
-              <strong>Итого: {totalPrice.toLocaleString()} Р</strong>
+          </div>
+            <div className="bucket__total-wrapp">
+              <div className="bucket__total">
+                <strong>Итого: {totalPrice.toLocaleString()} Р</strong>
+              </div>
             </div>
           </div>
           </>

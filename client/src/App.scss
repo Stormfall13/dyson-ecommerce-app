@@ -1418,23 +1418,23 @@ p {
 
 .burger__category-menu{
     position: fixed;
-    width: 100%;
-    height: 100vh;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0; 
-    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 999;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    transition: opacity 0.3s ease;
     .burger__category-wrapp{
-        border-radius: 3px;
-        max-width: 980px;
-        width: 100%;
-        margin: 0 auto;
         background: #111;
-        padding: 38px 20px;
+        width: 300px;
+        height: 100%;
+        transform: translateX(-100%); /* прячем за правый край */
+        animation: slideIn 0.3s forwards;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
         position: relative;
         .close__btn{
             background: transparent;
@@ -1469,6 +1469,14 @@ p {
             }
         }
     }
+    @keyframes slideIn {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(0%);
+        }
+      }
 }
 
 @media (max-width: 991px) {
@@ -2007,20 +2015,6 @@ p {
                 max-width: 400px;
             }
         }
-        .bucket__total{
-            margin-top: 20px;
-            color: var(--text-black-color);
-            font-size: 30px;
-            border: 1px solid var(--first-color);
-            border-radius: 3px;
-            max-width: 400px;
-            width: 100%;
-            min-height: 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
         .cart__amount{
             display: flex;
             align-items: center;
@@ -2037,6 +2031,28 @@ p {
             padding: 20px 28px; 
             border-radius: 3px;
         }
+    }
+    .bucket__main-wrapp{
+        display: flex;
+    }
+    .bucket__total{
+        color: var(--text-black-color);
+        font-size: 30px;
+        border: 1px solid var(--first-color);
+        border-radius: 3px;
+        max-width: 400px;
+        width: 100%;
+        min-height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0px; 
+    }
+    .bucket__total-wrapp{
+        max-width: 400px;
+        width: 100%;
+        margin: 10px 0 0 0;
     }
     .bucket__title{
         color: var(--text-black-color);
