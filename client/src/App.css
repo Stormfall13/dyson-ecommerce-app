@@ -1353,7 +1353,7 @@ p {
 }
 .burger__category-menu .burger__menu-wrapp .category__menu ul {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
 }
 .burger__category-menu .burger__menu-wrapp .category__menu ul li a {
@@ -1850,12 +1850,16 @@ p {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  max-width: 940px;
+  width: 100%;
 }
 .bucket .bucket__items .bucket__item {
   display: flex;
+  flex-wrap: wrap;
   border-bottom: 1px solid var(--first-color);
   border-radius: 3px;
   padding: 30px;
+  width: 100%;
 }
 .bucket .bucket__items .bucket__item .bucket__item-img {
   width: 90px;
@@ -1869,6 +1873,7 @@ p {
 }
 .bucket .bucket__items .bucket__item .goods__name {
   max-width: 400px;
+  width: 100%;
 }
 .bucket .bucket__items .cart__amount {
   display: flex;
@@ -1888,6 +1893,8 @@ p {
 }
 .bucket .bucket__main-wrapp {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .bucket .bucket__total {
   color: var(--text-black-color);

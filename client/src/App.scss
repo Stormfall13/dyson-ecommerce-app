@@ -1457,7 +1457,7 @@ p {
         .category__menu{
             ul{
                 display: flex;
-                flex-wrap: wrap;
+                flex-direction: column;
                 gap: 20px;
                 li{
                     a{
@@ -1997,11 +1997,15 @@ p {
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
+        max-width: 940px;
+        width: 100%;
         .bucket__item{
             display: flex;
+            flex-wrap: wrap;
             border-bottom: 1px solid var(--first-color);
             border-radius: 3px;
             padding: 30px;
+            width: 100%;
             .bucket__item-img{
                 width: 90px;
                 height: 90px;
@@ -2013,6 +2017,7 @@ p {
             }
             .goods__name{
                 max-width: 400px;
+                width: 100%;
             }
         }
         .cart__amount{
@@ -2034,6 +2039,8 @@ p {
     }
     .bucket__main-wrapp{
         display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
     .bucket__total{
         color: var(--text-black-color);
