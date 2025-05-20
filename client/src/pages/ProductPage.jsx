@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { setAmount, increment, decrement } from '../store/slices/amountsSlice';
 import { addToCart } from '../store/slices/cartSlice';
@@ -17,6 +17,7 @@ import '../App.css';
 const ProductPage = () => {
   const { slug } = useParams();
   const categoryGoods = categoryDataMap[slug];
+  const [showNotification, setShowNotification] = useState(false);
 
   const dispatch = useDispatch();
   const amounts = useSelector((state) => state.amounts);
@@ -54,6 +55,11 @@ const ProductPage = () => {
               const handleAddToCart = () => {
                 const amount = amounts[goods.id] || 1;
                 dispatch(addToCart({ id: goods.id, amount, product: goods }));
+
+                setShowNotification(true);
+                  setTimeout(() => {
+                    setShowNotification(false);
+                  }, 1500);
               };
                 return (
                     <div className="goods__wrapper-item" key={goods.id}>
@@ -94,11 +100,16 @@ const ProductPage = () => {
                         </div>
                         <button
                           className={`inBucket ${!goods.inStock ? 'disabled' : ''}`}
-                          onClick={handleAddToCart}
+                          onClick={() => handleAddToCart(goods)}
                           disabled={!goods.inStock}
                         >
                           В корзину
                         </button>
+                        {showNotification && (
+                              <div className="cart__notification">
+                                Товар добавлен в корзину
+                              </div>
+                        )}
                         </div>
                     </div>
                 )

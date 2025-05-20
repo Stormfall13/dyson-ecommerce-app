@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromCart, changeAmount } from '../store/slices/cartSlice';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import DeliveryMethod from '../components/DeliveryMethod';
+import PaymentMethod from '../components/PaymentMethod';
 
 import minus from '../assets/minus.svg';
 import plus from '../assets/plus.svg';
@@ -14,6 +16,9 @@ const BucketPage = () => {
 
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
+  const [deliveryMethod, setDeliveryMethod] = useState('pickup');
+  const [paymentMethod, setPaymentMethod] = useState('card');
 
 
   const handleRemove = (id) => {
@@ -57,10 +62,6 @@ const BucketPage = () => {
                   <img src={item.goodsImage} alt={item.goodsName} />
                 </div>
                 <p className='goods__name'>{item.goodsName}</p>
-                {/* {(() => {
-                  const activeFlag = item.flags.find(flag => flag.active);
-                  return activeFlag ? <div className='flag'>{activeFlag.value}</div> : null;
-                })()} */}
                 <div className='cart__amount'>
                     <div className="goods__amount">
                       <button onClick={() => handleDecrement(item.id)}>
@@ -96,6 +97,23 @@ const BucketPage = () => {
           </>
         )}
       </section>
+      <div className="bucket__checkout">
+        <DeliveryMethod onChange={setDeliveryMethod} />
+        <PaymentMethod onChange={setPaymentMethod} />
+        <button
+          onClick={() => {
+            const order = {
+              items: cart,
+              total: totalPrice,
+              deliveryMethod,
+              paymentMethod,
+            };
+            console.log('Заказ отправлен:', JSON.stringify(order, null, 2));
+          }}
+        >
+          Оформить заказ
+        </button>
+      </div> 
       <Footer />
     </>
   );

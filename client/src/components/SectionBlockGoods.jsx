@@ -17,6 +17,7 @@ const SectionBlockGoods = () => {
 
   const [expanded, setExpanded] = useState(false);
   const [sectionGoodsHidden, setSectionGoodsHidden] = useState(true);
+  const [showNotification, setShowNotification] = useState(false);
 
   const itemsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
@@ -86,6 +87,11 @@ const SectionBlockGoods = () => {
                const handleAddToCart = () => {
                   const amount = amounts[goods.id] || 1;
                   dispatch(addToCart({ id: goods.id, amount, product: goods }));
+
+                  setShowNotification(true);
+                  setTimeout(() => {
+                    setShowNotification(false);
+                  }, 1500);
                 }; 
                   return (
                       <div className="goods__wrapper-item" key={goods.id}>
@@ -126,11 +132,16 @@ const SectionBlockGoods = () => {
                           </div>
                             <button
                               className={`inBucket ${!goods.inStock ? 'disabled' : ''}`}
-                              onClick={handleAddToCart}
+                              onClick={() => handleAddToCart(goods)}
                               disabled={!goods.inStock}
                             >
                               В корзину
                             </button> 
+                            {showNotification && (
+                              <div className="cart__notification">
+                                Товар добавлен в корзину
+                              </div>
+                            )}
                           </div>
                       </div>
                   )
