@@ -19,27 +19,6 @@ const PaymentMethod = ({ onChange }) => {
         }
     };
 
-    // const handleCardChange = (field, value) => {
-    //     let updatedValue = value;
-    
-    //     if (field === 'expiry') {
-    //     // Удаляем все символы, кроме цифр
-    //     const digits = value.replace(/\D/g, '');
-    
-    //     if (digits.length === 0) {
-    //         updatedValue = '';
-    //     } else if (digits.length <= 2) {
-    //         updatedValue = digits;
-    //     } else {
-    //         updatedValue = digits.slice(0, 2) + '/' + digits.slice(2, 4);
-    //     }
-    //     }
-    
-    //     const updatedCard = { ...cardData, [field]: updatedValue };
-    //     setCardData(updatedCard);
-    //     onChange({ method, card: updatedCard });
-    // };
-
     const handleCardChange = (field, value) => {
         let updatedValue = value;
       
@@ -83,26 +62,27 @@ const PaymentMethod = ({ onChange }) => {
   return (
     <div className="payment-method">
       <h2>Способ оплаты</h2>
+      <div className="payment__variant">
+        <label>
+          <input
+            type="radio"
+            value="card"
+            checked={method === 'card'}
+            onChange={handleMethodChange}
+          />
+          Банковская карта
+        </label>
 
-      <label>
-        <input
-          type="radio"
-          value="card"
-          checked={method === 'card'}
-          onChange={handleMethodChange}
-        />
-        Банковская карта
-      </label>
-
-      <label>
-        <input
-          type="radio"
-          value="cash"
-          checked={method === 'cash'}
-          onChange={handleMethodChange}
-        />
-        Наличными при получении
-      </label>
+        <label>
+          <input
+            type="radio"
+            value="cash"
+            checked={method === 'cash'}
+            onChange={handleMethodChange}
+          />
+          Наличными при получении
+        </label>
+      </div>
 
       {method === 'card' && (
         <div className="card-fields">

@@ -26,14 +26,14 @@ const Register = () => {
     return (
         <div className="auth-container">
             <Header />
-            <h2>Регистрация</h2>
+            <h2 className="auth__title">Регистрация</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="username" placeholder="Имя" value={form.username} onChange={handleChange} required />
                 <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required />
                 <input type="password" name="password" placeholder="Пароль" value={form.password} onChange={handleChange} required />
                 <button type="submit">Зарегистрироваться</button>
             </form>
-            <p>Уже есть аккаунт? <a href="/login">Войти</a></p>
+            <p className="auth__link">Уже есть аккаунт? <a href="/login">Войти</a></p>
         </div>
     );
 };

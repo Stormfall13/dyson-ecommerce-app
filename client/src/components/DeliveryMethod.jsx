@@ -40,26 +40,27 @@ const DeliveryMethod = ({ onChange }) => {
   return (
     <div className="delivery-method">
       <h2>Доставка</h2>
+      <div className="delivery__variant">
+        <label>
+          <input
+            type="radio"
+            value="courier"
+            checked={method === 'courier'}
+            onChange={handleMethodChange}
+          />
+          Курьерская доставка — 1 500 ₽
+        </label>
 
-      <label>
-        <input
-          type="radio"
-          value="courier"
-          checked={method === 'courier'}
-          onChange={handleMethodChange}
-        />
-        Курьерская доставка — 1 500 ₽
-      </label>
-
-      <label>
-        <input
-          type="radio"
-          value="pickup"
-          checked={method === 'pickup'}
-          onChange={handleMethodChange}
-        />
-        Самовывоз — бесплатно
-      </label>
+        <label>
+          <input
+            type="radio"
+            value="pickup"
+            checked={method === 'pickup'}
+            onChange={handleMethodChange}
+          />
+          Самовывоз — бесплатно
+        </label>
+      </div>
 
       <div className="delivery-fields">
         {method === 'courier' && (

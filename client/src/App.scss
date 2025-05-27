@@ -54,6 +54,53 @@ p {
 
 // ######### HEADER ########## //
 
+.auth-container{
+    .auth__title{
+        font-size: 30px;
+        max-width: 500px;
+        margin: 25px auto;
+        text-align: center;
+    }
+    form{
+        max-width: 500px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        input{
+            border: 1px solid var(--first-color);
+            border-radius: 3px;
+            font-size: 18px;
+            outline: none;
+            padding: 12px 20px;
+        }
+        button{
+            border: 0;
+            outline: none;
+            background: var(--text-black-color);
+            color: #fff;
+            border-radius: 3px;
+            font-size: 18px;
+            font-weight: var(--medium);
+            padding: 16px 0;
+            max-width: 261px;
+            width: 100%;
+        }
+    }
+    .auth__link{
+        max-width: 500px;
+        margin: 25px auto;
+        text-align: center;
+        font-size: 18px;
+        font-weight: var(--medium);
+        a{
+            color: var(--first-color);
+            text-decoration: underline;
+        }
+    }
+}
+
 .header{
     background: #111;
     padding: 4px 20px;
@@ -2137,3 +2184,84 @@ p {
     90% { opacity: 1; transform: translateX(-50%) translateY(0); }
     100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
   }
+
+.bucket__checkout{
+    max-width: 1360px;
+    margin: 0 auto; 
+    padding: 0 8px 50px 8px;
+    .order__btn{
+        background: var(--text-black-color);
+        border: 0;
+        outline: none;
+        font-size: 18px;
+        font-weight: var(--regular);
+        color: #fff;
+        cursor: pointer;
+        padding: 11px 20px;
+        border-radius: 3px;
+        margin: 20px 0 0 0;
+    }
+}
+.delivery-method{
+    h2{
+        font-size: 24px;
+        font-weight: var(--semi-bold);
+        margin: 15px 0; 
+    }
+    .delivery__variant{
+        display: flex;
+        flex-direction: column;
+        label{
+            font-size: 18px;
+            font-weight: var(--regular);
+        }
+    }
+    .form-item{
+        label{
+            display: flex;
+            flex-direction: column; 
+            textarea{
+                resize: none;
+                max-width: 450px;
+                min-height: 200px;
+                border: 1px solid var(--first-color);
+                border-radius: 3px;
+                outline: none;
+                font-size: 18px;
+            }
+        }
+    }
+}
+.payment-method{
+    h2{
+        font-size: 24px;
+        font-weight: var(--semi-bold);
+        margin: 15px 0; 
+    }
+    .payment__variant{
+        label{
+            font-size: 18px;
+            font-weight: var(--regular);
+        }
+    }
+    .card-fields{
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 20px 0 0 0;
+        label{
+            font-size: 18px;
+            font-weight: var(--regular); 
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            input{
+                outline: none;
+                border: 1px solid var(--first-color);
+                border-radius: 3px;
+                padding: 6px 12px 6px 12px;
+            }
+        }
+    }
+}

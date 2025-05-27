@@ -97,10 +97,11 @@ const BucketPage = () => {
           </>
         )}
       </section>
-      <div className="bucket__checkout">
+      <section className="bucket__checkout">
         <DeliveryMethod onChange={setDeliveryMethod} />
         <PaymentMethod onChange={setPaymentMethod} />
         <button
+          className='order__btn'
           onClick={() => {
             const order = {
               items: cart,
@@ -113,7 +114,7 @@ const BucketPage = () => {
         >
           Оформить заказ
         </button>
-      </div> 
+      </section> 
       <Footer />
     </>
   );

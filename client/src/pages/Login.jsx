@@ -6,6 +6,8 @@ import { loginSuccess } from "../store/slices/authSlice";
 
 import Header from "../components/Header";
 
+import '../App.css';
+
 
 const Login = () => {
     const [form, setForm] = useState({ email: "", password: "" });
@@ -32,13 +34,13 @@ const Login = () => {
     return (
         <div className="auth-container">
             <Header />
-            <h2>Вход</h2>
+            <h2 className="auth__title">Вход</h2>
             <form onSubmit={handleSubmit}>
                 <input type="email" name="email" placeholder="Email" value={form.email} onChange={handleChange} required />
                 <input type="password" name="password" placeholder="Пароль" value={form.password} onChange={handleChange} required />
                 <button type="submit">Войти</button>
             </form>
-            <p>Нет аккаунта? <a href="/register">Зарегистрироваться</a></p>
+            <p className="auth__link">Нет аккаунта? <a href="/register">Зарегистрироваться</a></p>
         </div>
     );
 };
