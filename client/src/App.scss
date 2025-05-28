@@ -166,14 +166,11 @@ p {
             object-fit: contain;
         }
         .count__bucket{
-            color: #111;
-            background: #fff;
+            color: #fff;
             position: absolute;
             right: 0;
             left: 40px;
             top: 0;
-            min-width: 26px;
-            min-height: 26px;
             padding: 3px;
             border-radius: 50px;
             display: flex;
@@ -222,11 +219,50 @@ p {
 
 // ########### BANNER ########## //
 
-.banner{
-    img{
+.banner {
+    position: relative;
+    overflow: hidden;
+    min-height: 850px;
+    background: #dfdfdf;
+    .banner__content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s ease-in-out;
+      position: absolute;
+      inset: 0;
+  
+      &.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+  
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+  
+    &__text-wrapp {
+      flex: 1 1 50%;
+      padding: 1rem;
+    }
+  
+    .banner__img {
+      flex: 1 1 50%;
+      display: grid;
+      max-width: 400px;
+      max-height: 400px;
+  
+      .banner-image {
         width: 100%;
         height: 100%;
         object-fit: contain;
+        grid-area: 1 / 1;
+      }
     }
 }
 
